@@ -2,7 +2,7 @@
 function consultaCep(){
     $(".barra-progresso").show();
     var cep = document.getElementById("cep").value;
-    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+    var url = "https://viacep.com.br/ws/"+cep+"/json/";
     
     console.log(url);
     
