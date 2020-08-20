@@ -1,5 +1,6 @@
 
 function consultaCep(){
+    $(".barra-progresso").show();
     var cep = document.getElementById("cep").value;
     var url = "https://viacep.com.br/ws/" + cep + "/json/";
     
@@ -19,7 +20,8 @@ function consultaCep(){
             $("#localidade").html(response.localidade);
             $("#uf").html(response.uf);
             $("#titulo_cep").html("CEP" + response.cep)
-            //$("#ibge").html(response.ibge);
+            $(".cep").show();
+            $(".barra-progresso").hide();
             //2ª forma
             //document.getElementById("cep").innerHTML = response.cep;
             //document.getElementById("logradouro").innerHTML = response.logradouro;
@@ -30,3 +32,8 @@ function consultaCep(){
         }
     })
 }
+
+$(function(){
+    $(".cep").hide();
+    $(".barra-progresso").hide();
+})
